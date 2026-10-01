@@ -31,17 +31,13 @@ def database_test():
     try:
         with get_db_connection() as connection:
             with connection.cursor() as cursor:
-                cursor.execute("SELECT current_database(), version();")
-                database_name, version = cursor.fetchone()
+                cursor.execute("SELECT 1;")
+                cursor.fetchone()
 
-        return (
-            "Database connection successful!<br>"
-            f"Database: {database_name}<br>"
-            f"{version}"
-        )
+        return "Database connection successful!"
 
-    except Exception as error:
-        return f"Database connection failed: {type(error).__name__}", 500
+    except Exception:
+        return "Database connection failed.", 500
 
 
 if __name__ == "__main__":
