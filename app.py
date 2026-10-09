@@ -20,24 +20,27 @@ def get_db_connection():
         connect_timeout=10
     )
 
+@app.route("/google9610ecb98ccc662c.html")
+def google_verification():
+    return "google-site-verification: google9610ecb98ccc662c.html"
 
 @app.route("/")
 def home():
     return "Secure Cloud Infrastructure Project"
 
 
-@app.route("/db")
-def database_test():
+@app.route("/health")
+def health():
     try:
         with get_db_connection() as connection:
             with connection.cursor() as cursor:
                 cursor.execute("SELECT 1;")
                 cursor.fetchone()
 
-        return "Database connection successful!"
+        return "Healthy", 200
 
     except Exception:
-        return "Database connection failed.", 500
+        return "Unhealthy", 503
 
 
 if __name__ == "__main__":
