@@ -8,6 +8,14 @@ This project consists of a Python Flask Web App deployed on Azure App Service an
 
 The objective was not only to deploy an application, but also to understand and improve the infrastructure around it: networking, security, identity, secret management, monitoring, resilience and cost.
 
+## Learning Approach
+
+This project was a learning project.
+
+I used AI as a learning assistant to help me understand the concepts, troubleshoot issues, and improve the architecture step by step.
+
+It was a support tool to understand the reasoning behind each configuration, command and security decision.
+
 ## Architecture
 
 ```mermaid
